@@ -1,5 +1,4 @@
 import numpy as np
-import xlrd as xl
 
 #finding distance between two word vectors
 def vector_distance(w1,w2) :
@@ -11,7 +10,7 @@ def sigmoid(v) :
     A1=1/(1+np.exp(-1*v))
     return(A1)
 
-#function to load parameters to calculate match using Neural Networks
+#function to load parameters of the Neural Networks
 def load_parameters() :
     f1=open("W1.txt")
     W1=np.zeros((2,3))

@@ -169,20 +169,6 @@ def load_keysent_vec() :
     return s1
 
 
-def load_for_testing(tm_ls) :
-    f1=open("keywords.txt", "w")
-    f2=open("keysen.txt", "w")
-    f3=open("answer.txt", "w")
-    for word in tm_ls[0] :
-        f1.write(str(word))
-        if type(word) is not int :
-            f1.write(",")
-    for sent in tm_ls[1] :
-        f2.write(sent)
-        f2.write("\n")
-    f3.write(tm_ls[2])
-
-
 def load_all() :
     pre_process()
     x1=load_answer()

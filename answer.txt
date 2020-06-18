@@ -1,1 +1,1 @@
-firewall network security device monitor incoming outgo network traffic permit block data packet base set security rule. 
+The firewall network is security device monitoring incoming and outgoing network traffic. It follows set rules.

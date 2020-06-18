@@ -1,0 +1,1 @@
+firewall network security device monitor incoming outgo network traffic permit block data packet base set security rule. 

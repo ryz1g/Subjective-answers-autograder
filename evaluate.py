@@ -6,14 +6,10 @@ import helping_functions as hf
 
 t0=time.time()
 y=0
-#counter=0
-#big_var=[[[u'protect', u'resist', u'virus', u'bacteria' ,0], [u'protect the host organism ', u'develop resistance against foreign particles ', u'viruses bacteria'], u'immune system helps us fight diseases.'], [[u'Printing', u'mesh', u'ink', u'substrate', u'blade', 0], [u'printing technique ', u'a mesh is used to transfer ink onto a substrate', u'except in areas made impermeable to the ink ', u'A blade is moved across the screen to fill the open mesh apertures with ink'], u'silk screening is '], [[u'network', u'protocol', u'unauthorised', u'rules', u'security', 0], [u'network security device', u'system to prevent unauthorised access', u'follows a set of rules'], u'A firewall is a network security device that monitors incoming and outgoing network traffic and permits or blocks data packets based on a set of security rules.']]        #make this the variable in which you pass the list of lists
+
 while True :
-    #lf.load_for_testing(big_var[counter])       #calling function to load the sets in respected text files
-    #counter=counter+1
 
-
-    ans_text ,ans_text_filt, ans_vec, ans_sent_text, ans_sent_vect, key_text, key_text_filt, key_vecs, synonyms, sens_text, sens_vect =lf.load_all()
+    ans_text ,ans_text_filt, ans_vec, ans_sent_text, ans_sent_vect, key_text, key_text_filt, key_vecs, synonyms, sens_text, sens_vect =lf.load_all()            #loading all the data which will be preprocessed before loading
 
     grad_vec=[0.0, 0.0, 0.0]         #vector to store answer parameters
 
@@ -39,40 +35,12 @@ while True :
             for answ in ans_vec :
                 temp_distance=hf.vector_distance(answ,keyword_vec)
                 if temp_distance<absmin :
-                    #print("Temp",temp_distance)
-                    #print("absmin=",absmin)
-                    #print("-----------",ans_text[i])
                     absmin=temp_distance
                     min_index=i
                 i=i+1
-            #print(key_text_filt[j])
             j=j+1
-            #print(ans_text_filt[min_index])
             summ=summ+absmin
         grad_vec[1]=(summ/len(key_vecs))
-
-
-
-    #def test3() :
-    #    summm=0.0
-    #    for keyword_vec in key_vecs :  #to find the best match for each keyword
-    #        absmin=10000000
-    #        for rang in range(1,6) :   #controls the number of words whose av we are taking
-    #            c=0                    #var for iterating over whole answer
-    #            test_min=10000000
-    #            for j in range(len(ans_text_filt)-rang) :
-    #                test_vec=np.squeeze(np.zeros((1,300)))
-    #                for i in range(c,c+rang) :    #loop for averaging vectors in a range
-    #                    test_vec=test_vec+ans_vec[i]
-    #                test_vec=test_vec/(rang+1)
-    #                temp_distance=hf.vector_distance(test_vec,keyword_vec)
-    #                if temp_distance<test_min :
-    #                    test_min=temp_distance
-    #                c=c+1
-    #            if test_min<absmin :
-    #                absmin=test_min
-    #    summm=summm+absmin
-    #    grad_vec[2]=summm/(len(key_vecs))
 
     #function to calculate avg exact similarities between key sentence words and answer sentence words
     def test4() :
@@ -92,25 +60,12 @@ while True :
             aggr=aggr+max_match
         grad_vec[2]=(aggr/len(sens_text))
 
-
-    #function to calculate the avg min distance of each key sentence from answer
-    #def test5() :
-    #    aggr=0.0
-    #    for v in sens_vect :
-    #        min=1000000
-    #        for w in ans_sent_vect :
-    #            temp_distance=hf.vector_distance(w,v)
-    #            if temp_distance < min :
-    #                min=temp_distance
-    #        aggr=aggr+min
-    #    grad_vec[3]=(aggr/len(sens_text))
-
+        
     test1()
     test2()
-    #test3()
     test4()
-    #test5()
-
+    
+    
     #low level intelligence funtion for catching anomalies in NN output and setting thresholds
     def test6(match) :
         p1,p2,p3=(grad_vec[0],grad_vec[1],grad_vec[2])
@@ -179,7 +134,5 @@ while True :
     z=input("Try again?")
     if z=="n" :
         break
-
-    #print("Matching in question",counter,":",test6(raw_match))
 
 print("Time taken to run the full program:", time.time()-t0)

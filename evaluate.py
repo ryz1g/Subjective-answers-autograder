@@ -132,7 +132,8 @@ while True :
     print("Time for doing calculations:",time.time()-t0)
     raw_match=hf.predict_matching(temp_vector)
     print("Raw matching:-----------------",raw_match)
-    print("Percentage matching:-----------------", test6(raw_match))
+    p_mat=test6(raw_match)
+    print("Percentage matching:-----------------", p_mat)
     print("Graded Vector:", temp_vector)
     z=input("Try again?")
     if z=="n" :

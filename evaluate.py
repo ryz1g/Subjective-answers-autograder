@@ -62,7 +62,10 @@ while True :
 
         
     test1()
-    test2()
+    try :
+        test2()
+    except :
+        grad_vec=[0.0, 50.0, 0.0]
     test4()
     
     

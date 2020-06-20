@@ -43,6 +43,7 @@ FOR keywords.txt
   - After the keywords, there should be a number denoting the pairs of synonyms present in the keywords.
     eg: CO2,H20,carbondioxide,water - The number should be 2
         Hello,Hi,Howdy - The number should be 3 as three pairs can be made (Hello,Hi)(Hello,Howdy)(Hi,Howdy)
+  - There can be as many keywords as you like.
         
 For any other doubts related to the format, check the sample format already included in the respective files.
 IMPORTANT:Since the program uses word embeddings trained on google news, American english spellings are recommended otherwise

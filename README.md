@@ -8,7 +8,7 @@ Instruction for running the autograder:-
 1) Download all the files and put them in the same folder.
 2) Download the above mentioned file (around 1.5gb) and put in the same folder as rest of the files.
 3) Run evaluate.py
-   - The program will take less than 40 seconds to initialize before actual calculations start(This time is used to load the
+   - The program will take less than 10 seconds to initialize before actual calculations start(This time is used to load the
      google file into primary memory)
    - Then the actual calculations start and it should not take more that a few milliseconds
    - After calculations are done, it will ask if you want to try again, at this point you can changes in the three text files 

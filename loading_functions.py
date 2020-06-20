@@ -86,7 +86,7 @@ def pre_process() :
 
 
 #loading all word vectors in model
-model = ww.load_word2vec_format('GoogleNews-vectors-negative300.bin.gz', binary=True)
+model = ww.load_word2vec_format('GoogleNews-vectors-negative300.bin.gz', binary=True, limit=500000)
 
 #returns a matrix after finding word vectors of the answer
 def load_answer() :

@@ -11,9 +11,9 @@ Instruction for running the autograder:-
    - The program will take less than 10 seconds to initialize before actual calculations start(This time is used to load the
      google file into primary memory)
    - Then the actual calculations start and it should not take more that a few milliseconds
-   - After calculations are done, it will ask if you want to try again, at this point you can changes in the three text files 
-     (answer.txt, keywords.txt and key sentences.txt) to run the evaluation again. This time and times after that, only a few
-     milliseconds will be taken to run the program.
+   - After calculations are done, it will ask if you want to try again, at this point you can make changes in the three text
+     files(answer.txt, keywords.txt and key sentences.txt) to run the evaluation again. This time and times after that, only
+     a few milliseconds will be taken to run the program.
    - Again the program will run and you can run it as many times as you are making changes to the text files.
    
    
@@ -44,4 +44,7 @@ FOR keywords.txt
     eg: CO2,H20,carbondioxide,water - The number should be 2
         Hello,Hi,Howdy - The number should be 3 as three pairs can be made (Hello,Hi)(Hello,Howdy)(Hi,Howdy)
         
-For any other doubts rekated to the format, check the sample format already included in the respective files.
+For any other doubts related to the format, check the sample format already included in the respective files.
+IMPORTANT:Since the program uses word embeddings trained on google news, American english spellings are recommended otherwise
+evaluation may give strange results. Most importantly, the keywords and key sentences the examiner provides, they should be 
+in American English.
